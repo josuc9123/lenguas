@@ -68,6 +68,7 @@ Route::get('actacalif', function (){
 
 Route::get('formcalif','AlumnosControler@index');
 Route::post('formcalif','AlumnosControler@create')->name('formularios.formcalif');
+Route::get('actacalif','AlumnosControler@acta');
 //Route::post('categorias','CategoriasControler@store');
 //Route::get('categorias/create','CategoriasControler@create');
 //Route::get('categorias/{categoria}','CategoriasControler@show');

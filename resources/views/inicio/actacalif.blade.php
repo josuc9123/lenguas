@@ -97,13 +97,26 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>17270162</td>
-                <td>JOSÉ FERNANDO PÉREZ GARCÍA</td>
-                <td>86</td>
-              </tr>
-              <tr>
+            @foreach($alumnos as $alumnos)
+                        <form action="{{ route('formularios.formcalif') }}" method="POST"> 
+                      <tbody>
+                      
+                        <tr>
+                         
+                          <!-- #Número ++-->
+                          <th >{{ $alumnos->id}}</th>
+                          <!-- No Control -->
+                          <td>{{ $alumnos->no_control}}</td>
+                          <!-- nombre alumno -->
+                          <td>{{ $alumnos->nombre}}</td>
+                          <!-- Calificación -->
+                          @csrf
+                          <td><input type="text" id="" name="calif" class="form-control" placeholder="calificaciones"></td>
+                          </tr>
+                          @endforeach
+                          </tbody> 
+                          </table>
+                          </div> 
                 <td>2</td>
                 <td>15270152</td>
                 <td>JAIR DE LA CRUZ VAZQUEZ</td>

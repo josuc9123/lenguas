@@ -14,11 +14,25 @@ class AlumnosControler extends Controller
      */
     public function index()
     {
-        $alumnos = DB::table('alumnos')
+        $alumnos  = DB::table('alumnos')
         ->select('alumnos.*')
         ->orderBy('id','ASC')
         ->get();
+    
         return view('formularios.formcalif')->with('alumnos',$alumnos);
+       
+        
+    }
+    public function acta()
+    {
+        $alum  = DB::table('alumnos')
+        ->select('alumnos.*')
+        ->orderBy('id','ASC')
+        ->get();
+    
+        return view('inicio.actacalif')->with('alumnos',$alum);
+       
+        
     }
 
     /**
@@ -28,6 +42,7 @@ class AlumnosControler extends Controller
      */
     public function create(Request $request)
     {
+
         return $request->all();
     }
 
